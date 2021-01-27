@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Shopping{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </head>
+    <body>
+        {% block body %}
+            <h1>Listado de productos:</h1>
+            <table>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Descripcion</th>
+                </tr>
+                {% for producto in productos %}
+                    <tr> 
+                        <td> {{ producto.id }} </td> 
+                        <td> {{ producto.nombre }} </td>
+                        <td> {{ producto.precio }} </td>
+                        <td> {{ producto.descripcion }} </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endblock %}
+    </body>
+</html>

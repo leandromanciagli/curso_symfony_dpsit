@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Shopping{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </head>
+    <body>
+        {% block body %}
+            <div>
+                {{ block('formulario', 'usuario/new.html.twig') }}
+            </div>
+            <div>
+
+                <h1>Listado de usuarios:</h1>
+                <table>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Email</th>
+                    </tr>
+                    {% for usuario in usuarios %}
+                        <tr> 
+                            <td> {{ usuario.id }} </td> 
+                            <td> {{ usuario.nombre }} </td>
+                            <td> {{ usuario.apellido }} </td>
+                            <td> {{ usuario.email }} </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        {% endblock %}
+    </body>
+</html>
