@@ -22,6 +22,6 @@ class DefaultController extends AbstractController
     public function nombres(): Response
     {
         $nombres = ['Raúl', 'Camila', 'Yohana', 'Diego', 'Gabriel', 'Carlos', 'Belén'];
-        return $this->render('nombres.html.twig', ['nombres'=>$nombres]);
+        return $this->render('default/nombres.html.twig', ['nombres'=>$nombres]);
     }
 }

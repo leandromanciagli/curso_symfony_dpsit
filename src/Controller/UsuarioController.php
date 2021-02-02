@@ -47,5 +47,4 @@ class UsuarioController extends AbstractController
         $em->flush();
         return $this->redirectToRoute('usuario_index');
     }
-
 }
